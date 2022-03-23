@@ -1,5 +1,6 @@
 :root{
     --sans: 'Outfit', sans-serif;
+    --grey: #7c7c7c;
 }
 
 body{
@@ -11,6 +12,7 @@ body{
     font-family: var(--sans);
     padding: 0;
     margin: 0;
+    background-color: var(--grey);
 }
 
 .upper{
@@ -34,6 +36,7 @@ select{
     cursor: pointer;
 }
 
+
 button.send{
     border-radius: 5rem;
     padding: 0.5rem 1rem;
@@ -49,7 +52,7 @@ form h2{
 
 .optselected{
     margin: 0;
-    background-image: url("../resources/items-section.jpg");
+    background-image: url("../resources/items-section.webp");
     background-size: cover;
     width: 100%;
     
@@ -57,6 +60,10 @@ form h2{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.optselected h2{
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .optselected ul{
@@ -70,8 +77,31 @@ form h2{
     list-style: none;
     padding: 1rem;
     margin: 1rem;
-    background-color: #757575;
+    background-color: var(--grey);
     border-bottom: 2px solid #000000;
     border-left: #000000 solid 2px;
     border-radius: 1rem;
+}
+
+.optselected li:hover{
+    cursor: pointer;
+    background-color: #858585;
+}
+
+@media screen and (max-width: 800px){
+
+    select{
+        padding: 0.5rem;
+        width: fit-content;
+    }
+    .optselected{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .optselected ul{
+        width: 80%;
+    }
 }
