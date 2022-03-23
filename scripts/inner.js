@@ -2350,6 +2350,7 @@ for(let i=0; i<names.length; i++){
     select.appendChild(option);
 }
 
+
 let info;
 
 select.addEventListener('change',
@@ -2364,12 +2365,14 @@ select.addEventListener('change',
     info +="Esporádico: " +  data[select.selectedIndex]["Esporádico"]+"%0A";
     info +="Direccion de entrega: " + data[select.selectedIndex]["Direccion de entrega"]+"%0A";
 
-    optSelect.innerHTML = "Datos seleccionados:<ul>"
-    optSelect.innerHTML += "<li>Razón Social: " + data[select.selectedIndex]["Razón Social"]+"</li>";
-    optSelect.innerHTML += "<li>Código: " + data[select.selectedIndex]["Código"]+"</li>";
-    optSelect.innerHTML += "<li>Documento: " + data[select.selectedIndex]["Documento"]+"</li>";
-    optSelect.innerHTML += "<li>Esporádico: " + data[select.selectedIndex]["Esporádico"]+"</li>";
-    optSelect.innerHTML += "<li>Direccion de entrega: " + data[select.selectedIndex]["Direccion de entrega"]+"</li></ul>";
+    let view_info = "<h2>Datos seleccionados:</h2>"
+    view_info += "<ul><li>Razón Social: " + data[select.selectedIndex]["Razón Social"]+"</li>";
+    view_info += "<li>Código: " + data[select.selectedIndex]["Código"]+"</li>";
+    view_info += "<li>Documento: " + data[select.selectedIndex]["Documento"]+"</li>";
+    view_info += "<li>Esporádico: " + data[select.selectedIndex]["Esporádico"]+"</li>";
+    view_info += "<li>Direccion de entrega: " + data[select.selectedIndex]["Direccion de entrega"]+"</li></ul>";
+
+    optSelect.innerHTML = view_info;
 
 });
 
@@ -2377,7 +2380,7 @@ let send = document.querySelector(".send");
 
 send.addEventListener('click', ()=>{
     console.log(info);
-    let message = `mailto:test@example.com?subject=Pedido&body=${info}`;
+    let message = `mailto:test@example.com,test2@example.com?subject=Pedido&body=${info}`;
     console.log(info);
     window.open(message);
 });
