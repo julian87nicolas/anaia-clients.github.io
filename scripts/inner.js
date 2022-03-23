@@ -2350,25 +2350,35 @@ for(let i=0; i<names.length; i++){
     select.appendChild(option);
 }
 
+let info;
+
 select.addEventListener('change',
   function(){
     var selectedOption = this.options[select.selectedIndex];
     console.log(selectedOption.value + ': ' + selectedOption.text);
     //optSelect.innerHTML = selectedOption.text;
-    var info = data[select.selectedIndex]["Razón Social"];
-    info += optSelect.innerHTML += data[select.selectedIndex]["Código"];
-    info += optSelect.innerHTML += data[select.selectedIndex]["Documento"];
-    info += optSelect.innerHTML += data[select.selectedIndex]["Esporádico"];
-    info += optSelect.innerHTML += data[select.selectedIndex]["Direccion de entrega"];
+    info = "Datos de cliente:%0A";
+    info += "Razón Social: " + data[select.selectedIndex]["Razón Social"] +"%0A";
+    info +="Código: " +  data[select.selectedIndex]["Código"]+"%0A";
+    info +="Documento: " +  data[select.selectedIndex]["Documento"]+"%0A";
+    info +="Esporádico: " +  data[select.selectedIndex]["Esporádico"]+"%0A";
+    info +="Direccion de entrega: " + data[select.selectedIndex]["Direccion de entrega"]+"%0A";
 
-    optSelect.innerHTML = data[select.selectedIndex]["Razón Social"];
-    optSelect.innerHTML += "<br>";
-    optSelect.innerHTML += data[select.selectedIndex]["Código"];
-    optSelect.innerHTML += "<br>";
-    optSelect.innerHTML += data[select.selectedIndex]["Documento"];
-    optSelect.innerHTML += "<br>";
-    optSelect.innerHTML += data[select.selectedIndex]["Esporádico"];
-    optSelect.innerHTML += "<br>";
-    optSelect.innerHTML += data[select.selectedIndex]["Direccion de entrega"];
+    optSelect.innerHTML = "Datos seleccionados:<ul>"
+    optSelect.innerHTML += "<li>Razón Social: " + data[select.selectedIndex]["Razón Social"]+"</li>";
+    optSelect.innerHTML += "<li>Código: " + data[select.selectedIndex]["Código"]+"</li>";
+    optSelect.innerHTML += "<li>Documento: " + data[select.selectedIndex]["Documento"]+"</li>";
+    optSelect.innerHTML += "<li>Esporádico: " + data[select.selectedIndex]["Esporádico"]+"</li>";
+    optSelect.innerHTML += "<li>Direccion de entrega: " + data[select.selectedIndex]["Direccion de entrega"]+"</li></ul>";
 
 });
+
+let send = document.querySelector(".send");
+
+send.addEventListener('click', ()=>{
+    console.log(info);
+    let message = `mailto:test@example.com?subject=Pedido&body=${info}`;
+    console.log(info);
+    window.open(message);
+});
+

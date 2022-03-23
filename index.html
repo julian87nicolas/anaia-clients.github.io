@@ -4,16 +4,27 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles/style.css">
   <title>Clients</title>
 </head>
 <body>
-  <h1>Anaia Wines</h1>
+  <div class="upper">
+    <img src="resources/logo.png" alt="anaia-logo" class="logo">
+    <form action="mailto:julicmrgo@gmail.com" method="POST" id="form" enctype=”multipart/form-data” name=”EmailForm”>
+      <h2>Seleccione cliente:</h2>
+      <select name="Clients" id="test">
+      </select>
+    </form>
 
-  <select name="Clients" id="test">
-  </select>
+    <button class="send">Enviar</button>
 
-  <div class="optselected"></div>
+  </div>
+    <div class="optselected"></div>
 
   <script src="scripts/inner.js"></script>  
 </body>
