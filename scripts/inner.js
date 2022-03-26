@@ -2393,6 +2393,7 @@ finder.addEventListener("keyup", () =>{
                 console.log(finder.value, names[i]);
                 select.selectedIndex = i;
         }
+        
     }
 })
 
