@@ -2341,6 +2341,7 @@ for(let i=0; i<data.length;i++){
 const select = document.querySelector('#test');
 const optSelect = document.querySelector('.optselected');
 
+
 for(let i=0; i<names.length; i++){
     //agregar valores option
     let option = document.createElement('option');
@@ -2352,9 +2353,8 @@ for(let i=0; i<names.length; i++){
 
 let info;
 
-select.addEventListener('click',
-  function(){
-    var selectedOption = this.options[select.selectedIndex];
+function show_client(){
+    var selectedOption = select.options[select.selectedIndex];
     console.log(selectedOption.value + ': ' + selectedOption.text);
     //optSelect.innerHTML = selectedOption.text;
     info = "Datos de cliente:%0A";
@@ -2372,8 +2372,9 @@ select.addEventListener('click',
     view_info += "<li>Direccion de entrega: " + data[select.selectedIndex]["Direccion de entrega"]+"</li></ul>";
 
     optSelect.innerHTML = view_info;
+}
 
-});
+select.addEventListener('change', () => {show_client();});
 
 let send = document.querySelector(".send");
 
@@ -2389,9 +2390,10 @@ let finder = document.querySelector(".finder");
 finder.addEventListener("keyup", () =>{
     console.log(finder.value);
     for(let i=0; i<names.length; i++){
-            if(names[i].toLowerCase().includes(finder.value.toLowerCase())){
+            if(names[i].slice(0, finder.value.length).toLowerCase().includes(finder.value.toLowerCase())){
                 console.log(finder.value, names[i]);
                 select.selectedIndex = i;
+                show_client();
         }
         
     }
