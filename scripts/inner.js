@@ -2352,7 +2352,7 @@ for(let i=0; i<names.length; i++){
 
 let info;
 
-select.addEventListener('change',
+select.addEventListener('click',
   function(){
     var selectedOption = this.options[select.selectedIndex];
     console.log(selectedOption.value + ': ' + selectedOption.text);
