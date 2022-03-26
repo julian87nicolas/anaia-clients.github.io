@@ -2337,7 +2337,6 @@ for(let i=0; i<data.length;i++){
     names.push(data[i]["Razón Social"]);
 }
 
-console.log(data[0]["Código"], data[0]["Razón Social"]);
 
 const select = document.querySelector('#test');
 const optSelect = document.querySelector('.optselected');
@@ -2385,3 +2384,23 @@ send.addEventListener('click', ()=>{
     window.open(message);
 });
 
+let finder = document.querySelector(".finder");
+
+finder.addEventListener("keyup", () =>{
+    console.log(finder.value);
+    for(let i=0; i<names.length; i++){
+            if(names[i].toLowerCase().includes(finder.value.toLowerCase())){
+                console.log(finder.value, names[i]);
+                select.selectedIndex = i;
+        }
+    }
+})
+
+
+/*
+TODO:
+ * Añadir buscador a la lista select.
+ * Buscar forma de agregar clientes a la lista select.
+ * Corregir los correos
+ * Investigar API Google Drive
+*/
