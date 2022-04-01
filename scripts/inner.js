@@ -1,3 +1,4 @@
+
 const data = [
     {
     "Código": "",
@@ -2337,7 +2338,7 @@ const data = [
      "Esporádico": "N",
      "Direccion de entrega": null
     }
-   ];
+];
 
 
 let names = [];
