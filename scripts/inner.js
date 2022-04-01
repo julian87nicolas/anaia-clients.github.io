@@ -1,5 +1,12 @@
 const data = [
     {
+    "Código": "",
+    "Razón Social": "",
+    "Documento": "",
+    "Esporádico": "",
+    "Direccion de entrega": ""   
+    },
+    {
      "Código": "0001",
      "Razón Social": "TAMBURO BALAGUER JOSUE JAVIER",
      "Documento": "20-32239256-8",
@@ -2332,6 +2339,7 @@ const data = [
     }
    ];
 
+
 let names = [];
 for(let i=0; i<data.length;i++){
     names.push(data[i]["Razón Social"]);
@@ -2374,6 +2382,8 @@ function show_client(){
     optSelect.innerHTML = view_info;
 }
 
+show_client();
+
 select.addEventListener('change', () => {show_client();});
 
 let send = document.querySelector(".send");
@@ -2390,7 +2400,7 @@ let finder = document.querySelector(".finder");
 finder.addEventListener("keyup", () =>{
     console.log(finder.value);
     for(let i=0; i<names.length; i++){
-            if(names[i].slice(0, finder.value.length).toLowerCase().includes(finder.value.toLowerCase())){
+            if(names[i].toLowerCase().includes(finder.value.toLowerCase())){
                 console.log(finder.value, names[i]);
                 select.selectedIndex = i;
                 show_client();
@@ -2402,7 +2412,6 @@ finder.addEventListener("keyup", () =>{
 
 /*
 TODO:
- * Añadir buscador a la lista select.
  * Buscar forma de agregar clientes a la lista select.
  * Corregir los correos
  * Investigar API Google Drive
