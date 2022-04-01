@@ -5,6 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://unpkg.com/sheetrock@1.2.0/dist/sheetrock.min.js"></script>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
@@ -30,9 +33,11 @@
 
   </div>
 
-      <div class="optselected"></div>
+  <div class="optselected"></div>
   
+  <table id="sheet" style="display: none;"></table>
 
+  <script src="scripts/createTable.js"></script>
   <script src="scripts/inner.js"></script>
 </body>
 </html>
